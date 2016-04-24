@@ -28,6 +28,9 @@ var sendAlarms = function (){
         dataType: "json"
     }).done(function ( data ) {
         console.log(data.message);
+        if(data.code == 2){
+            alert(data.message);
+        }
     });
 }
 

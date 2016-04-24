@@ -23,26 +23,26 @@ var getAlarms = function () {
 
 var getAlarmsAjax = function () {
     $.ajax({
-        url: "http://localhost/fortknox/Server.php"
+        url: "http://localhost/fortknox/Server.php?action=getAlarms"
     }).done(function ( data ) {
         if ( console && console.log ) {
             console.log("Sample of data:", data.slice(0, 100));
         }
-        updateAlarm(JSON.parse(data));
+        alarms = JSON.parse(data).message;
+        updateAlarm();
     });
 }
 
-var updateAlarm = function ( alarms ) {
+var updateAlarm = function ( ) {
     for ( var i = 0; i < alarms.length; i++ ) {
-        $('#alarm' + i).attr("src", "assets/led" + alarms[i].state + '.png');
-        if(alarms[i].state == 2){
-            $('#alarm' + i).animate({opacity: 0}, 1000);
-            $('#alarm' + i).animate({opacity: 1}, 1000);
-        }
+        $('#alarm' + (i+1)).attr("src", "assets/led" + alarms[i].state + '.png');
     }
 }
 
+var alarms = getAlarms();
+
 $(document).ready(function () {
-    updateAlarm(getAlarms());
+    updateAlarm();
     getAlarmsAjax();
+    window.setInterval(getAlarmsAjax,1*1000);
 });

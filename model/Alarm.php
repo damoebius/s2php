@@ -6,7 +6,10 @@
  * Date: 13/03/16
  * Time: 21:12
  */
-class Alarm
+
+include_once __DIR__.'/IAlarm.php';
+
+class Alarm  implements IAlarm
 {
     public $type;
     public $state;
@@ -15,5 +18,9 @@ class Alarm
     {
         $this->type = $type;
         $this->state = $state;
+    }
+
+    public function getState(){
+        return $this->getState();
     }
 }

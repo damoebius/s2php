@@ -23,15 +23,19 @@ class Server {
     {
         $this->proxy = new AlarmProxy();
         $action = $_GET['action'];
-        switch($action){
-            case Action::GET_ALARMS:
-                $this->getAlarms();
-                break;
-            case Action::UPDATE_ALARMS:
-                $this->updateAlarms();
-                break;
-            default:
-                $this->sendUnknownActionError();
+        try {
+            switch ( $action ) {
+                case Action::GET_ALARMS:
+                    $this->getAlarms();
+                    break;
+                case Action::UPDATE_ALARMS:
+                    $this->updateAlarms();
+                    break;
+                default:
+                    $this->sendUnknownActionError();
+            }
+        } catch(Exception $error){
+            $this->send( new Response(ResponseCode::TECHNICAL_ERROR,$error->getMessage()));
         }
     }
 
