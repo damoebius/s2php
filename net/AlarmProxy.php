@@ -1,4 +1,5 @@
 <?php
+namespace fortknox\net;
 /**
  * Created by IntelliJ IDEA.
  * User: damo
@@ -6,7 +7,6 @@
  * Time: 13:21
  */
 
-include_once __DIR__.'/../error/IllegalArgumentException.php';
 
 class AlarmProxy {
 

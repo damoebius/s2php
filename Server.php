@@ -1,15 +1,11 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: d.mouton
- * Date: 15/01/2015
- * Time: 15:23
- */
-include_once(__DIR__.'/net/Action.php');
-include_once(__DIR__.'/net/Response.php');
-include_once(__DIR__.'/net/ResponseCode.php');
-include_once(__DIR__.'/net/AlarmProxy.php');
-include_once(__DIR__.'/model/Mock.php');
+namespace fortknox;
+use fortknox\net\AlarmProxy;
+use fortknox\net\Action;
+use fortknox\net\Response;
+use fortknox\net\ResponseCode;
+
+require_once(__DIR__.'/Bootstrap.php');
 class Server {
 
     private static $instance;
@@ -60,6 +56,7 @@ class Server {
     }
 
     public static function main(){
+        spl_autoload_register(array('Bootstrap', 'autoload'));
         self::$instance = new Server();
     }
 }

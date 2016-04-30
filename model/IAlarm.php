@@ -1,4 +1,5 @@
 <?php
+namespace fortknox\model;
 /**
  * Created by IntelliJ IDEA.
  * User: damo

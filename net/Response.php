@@ -1,5 +1,5 @@
 <?php
-
+namespace fortknox\net;
 /**
  * Created by IntelliJ IDEA.
  * User: damo

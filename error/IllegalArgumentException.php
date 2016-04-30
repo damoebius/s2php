@@ -1,5 +1,5 @@
 <?php
-
+namespace fortknox\error;
 /**
  * Created by IntelliJ IDEA.
  * User: damo
