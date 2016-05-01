@@ -7,6 +7,7 @@ namespace fortknox\net;
  * Time: 13:21
  */
 
+use fortknox\error\IllegalArgumentException;
 
 class AlarmProxy {
 

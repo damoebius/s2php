@@ -7,7 +7,7 @@ namespace fortknox\model;
  * Time: 21:15
  */
 
-include_once(__DIR__.'/Alarm.php');
+use fortknox\model\Alarm;
 
 class IntrusionAlarm extends Alarm {
 

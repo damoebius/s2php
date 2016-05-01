@@ -7,6 +7,8 @@ namespace fortknox\model;
  * Time: 16:07
  */
 
+use fortknox\model\IAlarm;
+
 class Trap implements IAlarm{
 
     public $state;

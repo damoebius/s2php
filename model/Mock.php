@@ -7,10 +7,10 @@ namespace fortknox\model;
  * Time: 21:28
  */
 
-include_once(__DIR__.'/IntrusionAlarm.php');
-include_once(__DIR__.'/MovementAlarm.php');
-include_once(__DIR__.'/InfraRedAlarm.php');
-include_once(__DIR__.'/AlarmState.php');
+use fortknox\model\IntrusionAlarm;
+use fortknox\model\MovementAlarm;
+use fortknox\model\InfraRedAlarm;
+use fortknox\model\AlarmState;
 
 class Mock {
 

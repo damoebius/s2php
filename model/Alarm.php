@@ -7,7 +7,7 @@ namespace fortknox\model;
  * Time: 21:12
  */
 
-include_once __DIR__.'/IAlarm.php';
+use fortknox\model\IAlarm;
 
 class Alarm  implements IAlarm
 {
